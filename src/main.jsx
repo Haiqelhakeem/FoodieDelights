@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import LoginPage from './pages/LoginPage.jsx'
-import Hero from './layouts/hero.jsx'
+import HomePage from './pages/HomePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -11,8 +11,8 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: '/about',
-    element: <Hero />,
+    path: '/home',
+    element: <HomePage />,
   },
 ])
 

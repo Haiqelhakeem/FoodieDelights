@@ -1,8 +1,15 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+
 const Button = (props) => {
-    const {value} = props
-    return(
-        <button className="btn w-full bg-black border-none font-bold">{value}</button>
-    )
-}
+  const { value, link,} = props;
+  return (
+    <Link to ={link}>
+      <button className={'btn bg-black hover:bg-orange-500 text-orange-500 hover:text-black w-full bg-black border-none font-bold'}>
+        {value}
+      </button>
+    </Link>
+  );
+};
 
 export default Button;
