@@ -7,7 +7,7 @@ const InputField = (props) => {
         name = {name}
         type={type}
         placeholder={placeholder}
-        className="input input-bordered w-full max-w-xs mb-4 bg-white"
+        className="input input-bordered w-full max-w-xs mb-4 bg-white text-black"
       />
     </div>
   );

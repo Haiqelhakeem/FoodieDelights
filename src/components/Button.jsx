@@ -5,7 +5,7 @@ const Button = (props) => {
   const { value, link,} = props;
   return (
     <Link to ={link}>
-      <button className={'btn bg-black hover:bg-orange-500 text-orange-500 hover:text-black w-full bg-black border-none font-bold'}>
+      <button className={'btn hover:bg-orange-500 text-orange-500 hover:text-black w-full bg-black border-none font-bold'}>
         {value}
       </button>
     </Link>

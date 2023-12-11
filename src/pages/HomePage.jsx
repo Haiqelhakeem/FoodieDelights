@@ -1,6 +1,6 @@
 import Footer from "../layouts/Footer";
 import Nav from "../layouts/Nav";
-import Hero from "../layouts/hero";
+import Hero from "../layouts/Hero";
 
 const Home = () => {
   return (

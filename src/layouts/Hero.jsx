@@ -1,3 +1,5 @@
+import Button from "../components/Button";
+
 const Hero = () => {
   return (
     <>
@@ -16,12 +18,7 @@ const Hero = () => {
                 you a cafe, restaurant or many more culinary options
                 recommendation.
               </p>
-              <button
-                href="#"
-                className="btn bg-black border-none hover:bg-orange-500 text-orange-500 hover:text-black"
-              >
-                Get Started
-              </button>
+              <Button value="Explore" link="/explore" />
             </div>
           </div>
         </div>
