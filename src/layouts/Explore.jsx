@@ -3,23 +3,24 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getPlaces } from "../services/place.service";
+import Button from "../components/Button";
 // import axios from "axios";
 
 const Explore = () => {
   const [dataCard, setCard] = useState([]);
 
+  //fetching places
   useEffect(() => {
     getPlaces((data) => {
-      console.log(data);
       setCard(data);
+    }).catch((err) => {
+      console.log("Error: ", err);
     });
   }, []);
 
   return (
     <>
-    <div>
-      
-    </div>
+      <div></div>
       <div className="flex flex-wrap w-full justify-center mb-10">
         {dataCard.map((card) => (
           <div className="flex flex-row">
@@ -43,6 +44,9 @@ const Explore = () => {
             </Link>
           </div>
         ))}
+      </div>
+      <div className="flex justify-center w-full mb-10 -mt-5">
+        <Button value="Add Your Place!" link="/" />
       </div>
     </>
   );

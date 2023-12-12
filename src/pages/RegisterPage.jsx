@@ -1,8 +1,37 @@
 import InputField from "../components/InputField";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const RegisterPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let result = await fetch("http://localhost:3000/register", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    result = await result.json();
+    console.warn(result);
+    if (result) {
+      alert("Registration Successful");
+      setName("");
+      setEmail("");
+      setPassword("");
+    }
+  };
+
   return (
     <div
       className="hero min-h-screen flex items-center justify-center bg-white"
@@ -15,14 +44,35 @@ const RegisterPage = () => {
         <h1 className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent text-4xl font-bold -mt-16 mb-3">
           Foodie Delights
         </h1>
-        <h2 className="text-white text-4xl font-bold mb-3">Sign Up Your Account!</h2>
+        <h2 className="text-white text-4xl font-bold mb-3">
+          Sign Up Your Account!
+        </h2>
         <p className="text-white text-sm mb-3">
           Please fill your credentials to use our website
         </p>
-        <InputField name="name" type="text" placeholder="Name" />
-        <InputField name="email" type="email" placeholder="Email" />
-        <InputField type="password" placeholder="Password" />
-        <Button value="Login" link="/home" />
+        <form action="">
+          <InputField
+            name="name"
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <InputField
+            name="email"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <InputField
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button value="Login" link="/home" onClick={handleSubmit} />
+        </form>
         <p className="text-white text-sm mt-3">Already have an account?</p>
         <Link
           to="/"
