@@ -8,45 +8,65 @@ import Button from "../components/Button";
 
 const Explore = () => {
   const [dataCard, setCard] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   //fetching places
   useEffect(() => {
     getPlaces((data) => {
       setCard(data);
+      setFilteredData(data);
     }).catch((err) => {
       console.log("Error: ", err);
     });
   }, []);
 
+  const filterItem = (category) => {
+    const newData = dataCard.filter((card) => card.category === category);
+    setFilteredData(newData);
+  };
+
+  const showAll = () => {
+    setFilteredData(dataCard); // Show all places
+  };
+
   return (
     <>
-      <div></div>
-      <div className="flex flex-wrap w-full justify-center mb-10">
-        {dataCard.map((card) => (
-          <div className="flex flex-row">
-            <Link to="/">
-              <div className="card card-compact w-80 bg-white shadow-xl m-3">
-                <figure>
-                  <img src={card.img} />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title text-black text-2xl">
-                    {card.name}
-                  </h2>
-                  <p className="text-black">{card.desc}</p>
-                  <div className="card-actions justify-end text-orange-500">
-                    <div className="badge badge-outline">{card.category}</div>
-                    <div className="badge badge-outline">{card.address}</div>
-                    <div className="badge badge-outline">{card.rating}</div>
+      <div className="flex flex-row">
+        <div className="flex flex-col w-1/4 p-3">
+          {/* Create filter buttons for each category */}
+          <h3 className="text-lg font-bold flex justify-center text-white mb-3">Filter By Category</h3>
+          <button className="btn bg-orange-500 text-white mb-3" onClick={showAll}>Show All</button>
+          <button className="btn bg-orange-500 text-white mb-3" onClick={() => filterItem("Cafe")}>Cafe</button>
+          <button className="btn bg-orange-500 text-white mb-3" onClick={() => filterItem("Bakery")}>Bakery</button>
+          <button className="btn bg-orange-500 text-white mb-3" onClick={() => filterItem("Restaurant")}>Restaurant</button>
+        </div>
+        <div className="flex flex-wrap w-full justify-center mb-10">
+          {filteredData.map((card) => (
+            <div className="flex flex-row">
+              <Link to="/">
+                <div className="card card-compact w-64 bg-white shadow-xl m-3">
+                  <figure>
+                    <img src={card.img} />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title text-black text-2xl">
+                      {card.name}
+                    </h2>
+                    <p className="text-black">{card.desc}</p>
+                    <div className="card-actions justify-end text-orange-500">
+                      <div className="badge badge-outline">{card.category}</div>
+                      <div className="badge badge-outline">{card.address}</div>
+                      <div className="badge badge-outline">{card.rating}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
+          ))}
+          <div className="flex justify-center w-full mt-5">
+            <Button value="Add Your Place!" link="/" />
           </div>
-        ))}
-      </div>
-      <div className="flex justify-center w-full mb-10 -mt-5">
-        <Button value="Add Your Place!" link="/" />
+        </div>
       </div>
     </>
   );
