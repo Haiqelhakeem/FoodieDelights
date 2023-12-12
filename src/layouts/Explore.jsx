@@ -29,21 +29,25 @@ const Explore = () => {
     setFilteredData(dataCard); // Show all places
   };
 
+  const handleCardClick = (id) => {
+    history.push(`/places/${id}`);
+  };
+
   return (
     <>
       <div className="flex flex-row">
         <div className="flex flex-col w-1/4 p-3">
           {/* Create filter buttons for each category */}
           <h3 className="text-lg font-bold flex justify-center text-white mb-3">Filter By Category</h3>
-          <button className="btn bg-orange-500 text-white mb-3" onClick={showAll}>Show All</button>
-          <button className="btn bg-orange-500 text-white mb-3" onClick={() => filterItem("Cafe")}>Cafe</button>
-          <button className="btn bg-orange-500 text-white mb-3" onClick={() => filterItem("Bakery")}>Bakery</button>
-          <button className="btn bg-orange-500 text-white mb-3" onClick={() => filterItem("Restaurant")}>Restaurant</button>
+          <button className="btn bg-orange-500 text-white mx-5 mb-3" onClick={showAll}>Show All</button>
+          <button className="btn bg-orange-500 text-white mx-5 mb-3" onClick={() => filterItem("Cafe")}>Cafe</button>
+          <button className="btn bg-orange-500 text-white mx-5 mb-3" onClick={() => filterItem("Bakery")}>Bakery</button>
+          <button className="btn bg-orange-500 text-white mx-5 mb-3" onClick={() => filterItem("Restaurant")}>Restaurant</button>
         </div>
-        <div className="flex flex-wrap w-full justify-center mb-10">
+        <div className="flex flex-wrap w-full justify-center mb-10 -ml-20">
           {filteredData.map((card) => (
-            <div className="flex flex-row">
-              <Link to="/">
+            <div className="flex flex-row" key={card.id} onClick={() => handleCardClick(card.id)}>
+              <Link to={`/places/${card.id}`}>
                 <div className="card card-compact w-64 bg-white shadow-xl m-3">
                   <figure>
                     <img src={card.img} />
@@ -64,7 +68,7 @@ const Explore = () => {
             </div>
           ))}
           <div className="flex justify-center w-full mt-5">
-            <Button value="Add Your Place!" link="/" />
+            <Button value="Add Your Place!" link="/create-place" />
           </div>
         </div>
       </div>

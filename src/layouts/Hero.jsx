@@ -3,7 +3,7 @@ import Button from "../components/Button";
 const Hero = () => {
   return (
     <>
-      <div className="flex min-h-screen">
+      <div className="flex">
         <div className="hero w-1/2 min-h-screen bg-white">
           <img src="https://source.unsplash.com/781x1010?food" alt="" />
         </div>
