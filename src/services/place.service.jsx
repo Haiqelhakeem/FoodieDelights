@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getPlaces = async (callback) => {
     await axios
-      .get("http://127.0.0.1:3000/places", {
+      .get("https://foodie-delights-api.vercel.app/places", {
         headers: {
           "Content-Type": "application/json",
         },
