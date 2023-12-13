@@ -22,7 +22,7 @@ export const getPlaces = async (callback) => {
     // const response = await fetch(`/api/places/${id}`);
     // const data = await response.json();
     // callback(data)
-    await axios.get(`http://localhost:3000/places/${id}`).then((res) => {
+    await axios.get(`https://foodie-delights-api.vercel.app/places/${id}`).then((res) => {
       console.log(res.data);
       callback(res.data);
     }).catch((err) => {
