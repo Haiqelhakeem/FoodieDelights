@@ -7,20 +7,14 @@ const PlaceDetail = () => {
     const [place, setPlace] = useState(null);
   
     useEffect(() => {
-      fetchData();
-    }, [id]);
-  
-    const fetchData = async () => {
-      try {
-        const data = await getPlaceById(id);
+      getPlaceById(id, (data) => {
         setPlace(data);
-      } catch (error) {
-        console.error("Error fetching place details:", error);
-      }
-    };
+        console.log(data);
+      })
+    }, []);
   
     if (!place) {
-      return <div>Loading...</div>;
+      return <div>Not Found</div>;
     }
 
   return (

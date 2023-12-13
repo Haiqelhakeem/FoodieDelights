@@ -41,7 +41,7 @@ const router = createBrowserRouter([
   //   element: <ArticlePage />,
   // },
   {
-    path: '/explore/detail/:id', // Update the route to include the place ID
+    path: '/places/:id', // Update the route to include the place ID
     element: <PlaceDetail />,
   },
 ])

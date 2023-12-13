@@ -9,6 +9,7 @@ import Button from "../components/Button";
 const Explore = () => {
   const [dataCard, setCard] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  console.log(filteredData);
 
   //fetching places
   useEffect(() => {
@@ -46,8 +47,8 @@ const Explore = () => {
         </div>
         <div className="flex flex-wrap w-full justify-center mb-10 -ml-20">
           {filteredData.map((card) => (
-            <div className="flex flex-row" key={card.id} onClick={() => handleCardClick(card.id)}>
-              <Link to={`/places/${card.id}`}>
+            <div className="flex flex-row" key={card._id} onClick={() => handleCardClick(card.id)}>
+              <Link to={`/places/${card._id}`}>
                 <div className="card card-compact w-64 bg-white shadow-xl m-3">
                   <figure>
                     <img src={card.img} />
