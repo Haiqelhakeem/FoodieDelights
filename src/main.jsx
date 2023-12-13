@@ -8,8 +8,8 @@ import ExplorePage from './pages/ExplorePage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx' 
 // import ArticlePage from './pages/ArticlePage.jsx'
 import ArticleListPage from './pages/ArticleListPage.jsx'
-import PlaceDetail from './layouts/PlaceDetail.jsx'
 import CreatePlacePage from './pages/CreatePlacePage.jsx'
+import PlaceDetailPage from './pages/PlaceDetailPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
   // },
   {
     path: '/places/:id', // Update the route to include the place ID
-    element: <PlaceDetail />,
+    element: <PlaceDetailPage />,
   },
 ])
 

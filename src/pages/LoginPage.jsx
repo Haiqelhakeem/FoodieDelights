@@ -19,7 +19,7 @@ const LoginPage = () => {
         <p className="text-white text-sm mb-3">
           Please fill your credentials to use our website
         </p>
-        <InputField name="email" type="email" placeholder="Email" />
+        <InputField name="email" type="email" placeholder="Email" required={true} />
         <InputField name="password" type="password" placeholder="Password" />
         <Button value="Login" link="/home" />
         <p className="text-white text-sm mt-3">Don&apos;t have an account?</p>

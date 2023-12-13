@@ -19,9 +19,6 @@ export const getPlaces = async (callback) => {
   export const getPlaceById = async (id, callback) => {
     // Implement your logic to fetch a place by ID from your API or database
     // Example using placeholder data
-    // const response = await fetch(`/api/places/${id}`);
-    // const data = await response.json();
-    // callback(data)
     await axios.get(`https://foodie-delights-api.vercel.app/places/${id}`).then((res) => {
       console.log(res.data);
       callback(res.data);

@@ -4,7 +4,7 @@ const Nav = () => {
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 object-center">
           <a
-            href="/"
+            href="/home"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
