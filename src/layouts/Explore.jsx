@@ -99,6 +99,9 @@ const Explore = () => {
           <div className="flex justify-center w-full my-5 md:mt-5">
             <Button value="Add Your Place!" link="/create-place"/>
           </div>
+          <div>
+            <Button value="Find more articles" link="/article" />
+          </div>
         </div>
       </div>
     </>
