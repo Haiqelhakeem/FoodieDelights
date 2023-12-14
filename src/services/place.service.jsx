@@ -32,7 +32,7 @@ const getPlaceById = async (id, callback) => {
     });
 };
 
-const createPlace = async (data, callback) => {
+const createPlace = async (data) => {
   await axios
     .post("https://foodie-delights-api.vercel.app/places", data, {
       headers: {
@@ -41,7 +41,6 @@ const createPlace = async (data, callback) => {
     })
     .then((res) => {
       console.log(res.data);
-      callback(res.data);
     })
     .catch((err) => {
       console.log(err);

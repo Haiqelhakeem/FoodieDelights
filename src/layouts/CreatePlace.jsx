@@ -6,17 +6,28 @@ import placeServices from "../services/place.service";
 const CreatePlace = () => {
   const [placeData, setPlaceData] = useState({
     name: "",
-    desc: "",
     address: "",
-    category: "Cafe", // Set a default category if needed
-    img: "",
-    rating: 0,
+    description: "",
+    category: "",
+    image: "",
   });
 
+  console.log(placeData);
   const handleChange = (e) => {
-    setPlaceData({ ...placeData, [e.target.name]: e.target.value });
+    // setPlaceData({ ...placeData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setPlaceData({
+      ...placeData,
+      [name]: value,
+    });
   };
 
+  const handleCategoryChange = (event) => {
+    setPlaceData({
+      ...placeData,
+      category: event.target.value,
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -72,7 +83,7 @@ const CreatePlace = () => {
               name="category"
               id="category"
               className="select select-bordered w-56 bg-white text-black mb-3"
-              onChange={handleChange}
+              onChange={handleCategoryChange}
               // value={placeData.category}
             >
               <option value="Cafe">Cafe</option>
