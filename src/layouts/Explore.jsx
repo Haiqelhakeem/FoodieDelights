@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { getPlaces } from "../services/place.service";
+import placeServices from "../services/place.service";
 import Button from "../components/Button";
 // import axios from "axios";
 
@@ -13,12 +13,14 @@ const Explore = () => {
 
   //fetching places
   useEffect(() => {
-    getPlaces((data) => {
-      setCard(data);
-      setFilteredData(data);
-    }).catch((err) => {
-      console.log("Error: ", err);
-    });
+    placeServices
+      .getPlaces((data) => {
+        setCard(data);
+        setFilteredData(data);
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      });
   }, []);
 
   const filterItem = (category) => {
@@ -97,7 +99,7 @@ const Explore = () => {
             </div>
           ))}
           <div className="flex justify-center w-full my-5 md:mt-5">
-            <Button value="Add Your Place!" link="/create-place"/>
+            <Button value="Add Your Place!" link="/create-place" />
           </div>
           <div>
             <Button value="Find more articles" link="/article" />

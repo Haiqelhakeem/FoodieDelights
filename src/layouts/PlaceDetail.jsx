@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getPlaceById } from "../services/place.service";
+import placeServices from "../services/place.service";
 import { useEffect, useState } from "react";
 
 const PlaceDetail = () => {
@@ -7,7 +7,7 @@ const PlaceDetail = () => {
   const [place, setPlace] = useState(null);
 
   useEffect(() => {
-    getPlaceById(id, (data) => {
+    placeServices.getPlaceById(id, (data) => {
       setPlace(data);
       console.log(data);
     });
