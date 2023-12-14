@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="hero w-full md:w-1/2 md:min-h-screen bg-white">
           <img src="https://source.unsplash.com/781x1010?food" alt="" />
         </div>
-        <div className="hero w-full md:w-1/2 h-screen md:min-h-screen bg-white">
+        <div className="hero w-full md:w-1/2 min-h-screen bg-white">
           <div className="hero-content text-center">
             <div className="max-w-md">
               <h1 className="text-5xl font-bold text-orange-500">
