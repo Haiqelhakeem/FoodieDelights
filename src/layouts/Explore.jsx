@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import placeServices from "../services/place.service";
 import Button from "../components/Button";
+import { Icon } from "@iconify/react";
 // import axios from "axios";
 
 const Explore = () => {
@@ -91,7 +92,7 @@ const Explore = () => {
                     <div className="card-actions justify-end text-orange-500">
                       <div className="badge badge-outline">{card.category}</div>
                       <div className="badge badge-outline">{card.address}</div>
-                      <div className="badge badge-outline">{card.rating}</div>
+                      <div className="badge badge-outline"><Icon icon="ic:round-star" width={18} height={18}/>{card.rating}</div>
                     </div>
                   </div>
                 </div>

@@ -1,15 +1,16 @@
 import InputField from "../components/InputField";
 import { useState } from "react";
 import placeServices from "../services/place.service";
+import Button from "../components/Button";
 // import axios from "axios";
 
 const CreatePlace = () => {
   const [placeData, setPlaceData] = useState({
     name: "",
     address: "",
-    description: "",
+    desc: "",
     category: "",
-    image: "",
+    img: "",
   });
 
   console.log(placeData);
@@ -32,8 +33,12 @@ const CreatePlace = () => {
     e.preventDefault();
 
     try {
-      const response = await placeServices.createPlace(placeData);
-      console.log("Place created successfully!", response.data);
+      const response = await placeServices.createPlace(placeData)
+      console.log("Place data:", placeData);
+      
+        alert("Place created successfully!");
+        console.log("Place created successfully!", response.data);
+      
       // Handle success, e.g., redirect to a different page
     } catch (error) {
       console.error("Failed to create place.", error.message);
@@ -118,6 +123,9 @@ const CreatePlace = () => {
             </button>
           </div>
         </form>
+        <div className="flex justify-center w-full mt-7">
+          <Button value="Back to Explore!" link="/explore" />
+        </div>
       </div>
     </>
   );
