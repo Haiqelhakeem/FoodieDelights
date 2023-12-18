@@ -32,7 +32,7 @@ const PlaceDetail = () => {
         </div>
         <p className="text-black m-2">
           <span className="font-bold">Category: </span>
-          <a className="text-orange-500 hover:underline ml-2" href="/explore">
+          <a className="text-orange-500 font-semibold hover:underline ml-2" href="/explore">
             {place.category}
           </a>
         </p>
@@ -42,6 +42,10 @@ const PlaceDetail = () => {
         <p className="m-2">
           <span className="font-bold text-black">Rating: </span>{" "}
           <span className="text-pink-500 font-semibold">{place.rating}</span>
+        </p>
+        <p className="m-2">
+          <span className="font-bold text-black">Contact: </span>{" "}
+          <span className="text-orange-500 font-semibold">{place.contact}</span>
         </p>
         <p className="text-black m-2">
           {place.desc} <br /> Lorem ipsum dolor sit amet consectetur adipisicing

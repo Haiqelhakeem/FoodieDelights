@@ -114,6 +114,15 @@ const CreatePlace = () => {
             onChange={handleChange}
             // value={placeData.rating}
           />
+          <label htmlFor="contact">Contact</label>
+          <InputField
+            name="contact"
+            type="text" 
+            placeholder="Contact"
+            required={true}
+            onChange={handleChange}
+            // value={placeData.contact}
+          />
           <div className="flex justify-center">
             <button
               className="btn bg-gradient-to-r from-orange-500 to-yellow-500 text-black mt-7 w-full"
