@@ -2,10 +2,11 @@ import InputField from "../components/InputField";
 import { useState } from "react";
 import placeServices from "../services/place.service";
 import Button from "../components/Button";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 
 const CreatePlace = () => {
+  const navigate = useNavigate();
   const [placeData, setPlaceData] = useState({
     name: "",
     address: "",
@@ -39,7 +40,7 @@ const CreatePlace = () => {
       
         alert("Place created successfully!");
         // Redirect to another page
-        Navigate("/home");
+        navigate("/explore");
         console.log("Place created successfully!", response.data);
       // Handle success, e.g., redirect to a different page
     } catch (error) {
