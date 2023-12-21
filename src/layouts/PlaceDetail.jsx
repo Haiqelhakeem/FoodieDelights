@@ -15,6 +15,18 @@ const PlaceDetail = () => {
     });
   }, []);
 
+  const handleDelete = async () => {
+    try {
+      confirm("Are you sure you want to delete this place?");
+      if(confirm) {
+        await placeServices.deletePlace(id);
+        navigate("/explore");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   if (!place) {
     return <div>Not Found</div>;
   }
@@ -119,7 +131,8 @@ const PlaceDetail = () => {
           <button className="btn bg-orange-500 text-white mx-5 mb-3 border-none" onClick={() => navigate(`/places/${place._id}/edit`)}>
             Edit this place
           </button>
-          <button className="btn bg-red-500 text-white mx-5 mb-3 border-none">
+          <button className="btn bg-red-500 text-white mx-5 mb-3 border-none" onClick={handleDelete
+          }>
             Delete this place
           </button>
         </div>

@@ -42,7 +42,7 @@ const UpdatePlace = () => {
             const response = await placeService.updatePlace(placeData, id);
             console.log("Place data:", placeData);
             alert("Place updated successfully!");
-       
+            window.location.href = "/explore";
             // Handle success, e.g., redirect to a different page
         } catch (error) {
             console.error("Failed to update place.", error.message);

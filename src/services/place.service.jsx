@@ -62,4 +62,15 @@ const updatePlace = async (data, id) => {
     });
 }
 
-export default { getPlaces, getPlaceById, createPlace, updatePlace };
+const deletePlace = async (id) => {
+  await axios
+    .delete(`https://foodie-delights-api.vercel.app/places/${id}`)
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+export default { getPlaces, getPlaceById, createPlace, updatePlace, deletePlace };

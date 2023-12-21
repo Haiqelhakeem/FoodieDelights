@@ -6,7 +6,6 @@ import LoginPage from './pages/LoginPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ExplorePage from './pages/ExplorePage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx' 
-// import ArticlePage from './pages/ArticlePage.jsx'
 import ArticleListPage from './pages/ArticleListPage.jsx'
 import CreatePlacePage from './pages/CreatePlacePage.jsx'
 import PlaceDetailPage from './pages/PlaceDetailPage.jsx'
@@ -37,10 +36,6 @@ const router = createBrowserRouter([
     path: '/article',
     element: <ArticleListPage />,
   },
-  // {
-  //   path: '/article/detail',
-  //   element: <ArticlePage />,
-  // },
   {
     path: '/places/:id', // Update the route to include the place ID
     element: <PlaceDetailPage />,
