@@ -39,7 +39,7 @@ const CreatePlace = () => {
       
         alert("Place created successfully!");
         // Redirect to another page
-        Navigate("/explore");
+        Navigate("/home");
         console.log("Place created successfully!", response.data);
       // Handle success, e.g., redirect to a different page
     } catch (error) {
