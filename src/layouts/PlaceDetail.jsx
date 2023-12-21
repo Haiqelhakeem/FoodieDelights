@@ -20,6 +20,7 @@ const PlaceDetail = () => {
       confirm("Are you sure you want to delete this place?");
       if(confirm) {
         await placeServices.deletePlace(id);
+        alert("Place deleted successfully!");
         navigate("/explore");
       }
     } catch (error) {
