@@ -2,6 +2,7 @@ import InputField from "../components/InputField";
 import { useState } from "react";
 import placeServices from "../services/place.service";
 import Button from "../components/Button";
+import { Navigate } from "react-router-dom";
 // import axios from "axios";
 
 const CreatePlace = () => {
@@ -37,7 +38,8 @@ const CreatePlace = () => {
       console.log("Place data:", placeData);
       
         alert("Place created successfully!");
-        window.location.href = "/explore";
+        // Redirect to another page
+        Navigate("/explore");
         console.log("Place created successfully!", response.data);
       // Handle success, e.g., redirect to a different page
     } catch (error) {
