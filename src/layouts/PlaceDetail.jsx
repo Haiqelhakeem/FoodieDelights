@@ -132,9 +132,11 @@ const PlaceDetail = () => {
           <button className="btn bg-orange-500 text-white mx-5 mb-3 border-none" onClick={() => navigate(`/places/${place._id}/edit`)}>
             Edit this place
           </button>
-          <button className="btn bg-red-500 text-white mx-5 mb-3 border-none" onClick={handleDelete
-          }>
+          <button className="btn bg-red-500 text-white mx-5 mb-3 border-none" onClick={handleDelete}>
             Delete this place
+          </button>
+          <button className="btn bg-black-500 text-orange-500 mx-5 mb-3 border-none" onClick={() => navigate(`/explore`)}>
+            Back to explore
           </button>
         </div>
       </div>

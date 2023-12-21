@@ -37,8 +37,8 @@ const CreatePlace = () => {
       console.log("Place data:", placeData);
       
         alert("Place created successfully!");
+        window.location.href = "/explore";
         console.log("Place created successfully!", response.data);
-      
       // Handle success, e.g., redirect to a different page
     } catch (error) {
       console.error("Failed to create place.", error.message);

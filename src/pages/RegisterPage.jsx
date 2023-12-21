@@ -10,25 +10,30 @@ const RegisterPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let result = await fetch("http://localhost:3000/register", {
-      method: "POST",
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
 
-    result = await result.json();
-    console.warn(result);
-    if (result) {
-      alert("Registration Successful");
-      setName("");
-      setEmail("");
-      setPassword("");
+    try {
+      const response = await fetch("https://foodie-delights-api.vercel.app/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Registration successful");
+      } else {
+        alert(`Registration failed: ${data.error}`);
+      }
+    } catch (error) {
+      console.error("Registration error:", error.message);
+      alert("Registration failed");
     }
   };
 
