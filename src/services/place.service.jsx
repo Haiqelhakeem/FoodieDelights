@@ -47,4 +47,19 @@ const createPlace = async (data) => {
     });
 };
 
-export default { getPlaces, getPlaceById, createPlace };
+const updatePlace = async (data, id) => {
+  await axios
+    .put(`https://foodie-delights-api.vercel.app/places/${id}`, data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+export default { getPlaces, getPlaceById, createPlace, updatePlace };

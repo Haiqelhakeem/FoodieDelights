@@ -10,6 +10,7 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import ArticleListPage from './pages/ArticleListPage.jsx'
 import CreatePlacePage from './pages/CreatePlacePage.jsx'
 import PlaceDetailPage from './pages/PlaceDetailPage.jsx'
+import UpdatePlacePage from './pages/UpdatePlacePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: '/places/:id', // Update the route to include the place ID
     element: <PlaceDetailPage />,
+  },
+  {
+    path: '/places/:id/edit', // Update the route to include the place ID
+    element: <UpdatePlacePage />,
   },
 ])
 

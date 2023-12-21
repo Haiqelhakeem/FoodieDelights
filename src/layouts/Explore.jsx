@@ -40,7 +40,7 @@ const Explore = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row">
-        <div className="flex flex-col w-full md:w-1/4 p-3">
+        <div className="flex flex-col w-full md:w-1/4 p-3 mr-10">
           {/* Create filter buttons for each category */}
           <h3 className="text-lg font-bold flex justify-center text-white mb-3">
             Filter By Category
@@ -92,19 +92,20 @@ const Explore = () => {
                     <div className="card-actions justify-end text-orange-500">
                       <div className="badge badge-outline">{card.category}</div>
                       <div className="badge badge-outline">{card.address}</div>
-                      <div className="badge badge-outline"><Icon icon="ic:round-star" width={18} height={18}/>{card.rating}</div>
+                      <div className="badge badge-outline">
+                        <Icon icon="ic:round-star" width={18} height={18} />
+                        {card.rating}
+                      </div>
                     </div>
                   </div>
                 </div>
               </Link>
             </div>
           ))}
-          <div className="flex justify-center w-full my-5 md:mt-5">
-            <Button value="Add Your Place!" link="/create-place" />
-          </div>
-          <div>
-            <Button value="Find more articles" link="/article" />
-          </div>
+        </div>
+        <div className="flex justify-center md:justify-start items-center w-auto md:w-1/6 flex-col my-5 md:mt-5 gap-5 mr-3">
+          <Button value="Add Your Place!" link="/create-place" />
+          <Button value="Find more articles" link="/article" />
         </div>
       </div>
     </>

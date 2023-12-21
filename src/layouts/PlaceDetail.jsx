@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import placeServices from "../services/place.service";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PlaceDetail = () => {
   const { id } = useParams();
   const [place, setPlace] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     placeServices.getPlaceById(id, (data) => {
@@ -113,6 +115,14 @@ const PlaceDetail = () => {
           className="w-full"
           title="map"
         ></iframe>
+        <div className="flex justify-center mt-5">
+          <button className="btn bg-orange-500 text-white mx-5 mb-3 border-none" onClick={() => navigate(`/places/${place._id}/edit`)}>
+            Edit this place
+          </button>
+          <button className="btn bg-red-500 text-white mx-5 mb-3 border-none">
+            Delete this place
+          </button>
+        </div>
       </div>
     </div>
   );
