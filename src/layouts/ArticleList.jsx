@@ -4,26 +4,26 @@ const ArticleList = () => {
   const articles = [
     {
       id: 1,
-      title: "Article 1",
-      img: "https://source.unsplash.com/180x180?food",
+      title: "Chocolate Cake Recipe",
+      img: "https://source.unsplash.com/180x180?chocolate-cake",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       id: 2,
-      title: "Article 2",
-      img: "https://source.unsplash.com/180x180?drinks",
+      title: "Caramel Macchiato Recipe",
+      img: "https://source.unsplash.com/180x180?caramel-macchiato",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       id: 3,
-      title: "Article 3",
-      img: "https://source.unsplash.com/180x180?restaurant",
+      title: "Iced Cappucino Recipe",
+      img: "https://source.unsplash.com/180x180?cappucino",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       id: 4,
-      title: "Article 4",
-      img: "https://source.unsplash.com/180x180?cafe",
+      title: "Fried Rice Recipe",
+      img: "https://source.unsplash.com/180x180?fried-rice",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
   ];
